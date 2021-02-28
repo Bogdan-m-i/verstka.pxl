@@ -1,0 +1,147 @@
+.cell-info {
+	margin-bottom: 45px;
+	&:last-child {
+		margin-bottom: 49px;
+	}
+	&__body {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 8px;
+	}
+
+	&__clock {
+		span {
+			position: relative;
+			&:before {
+				content: ':';
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				width: 6px;
+				height: 85%;
+				top: 0;
+				left: calc(50% - 3px);
+			}
+		}
+	}
+
+	&__date {
+		margin-right: 12px;
+		position: relative;
+
+		p {
+			position: absolute;
+			bottom: 3px;
+			left: calc(100% + 12px);
+		}
+	}
+
+	&__footer {
+		* {
+			color: $red;
+		}
+	}
+
+	&__label {
+		opacity: 0.7;
+		margin-bottom: 18px;
+	}
+}
+
+.location {
+	display: flex;
+	flex-direction: column-reverse;
+
+	@include screen-sm-plus2 {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&__table {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-areas: 'date time' 'address address' 'cost cost';
+
+		@include screen-sm-plus1 {
+			grid-template-columns: 30% 70%;
+		}
+
+		@include screen-sm-plus2 {
+			grid-template-columns: 50% 50%;
+		}
+
+		@include screen-md {
+			grid-template-areas: 'date address' 'time cost';
+		}
+	}
+
+	&__cell-date {
+		grid-area: date;
+	}
+	&__cell-address {
+		grid-area: address;
+	}
+	&__cell-time {
+		grid-area: time;
+	}
+	&__cell-cost {
+		grid-area: cost;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include screen-sm-plus2 {
+			width: 50%;
+		}
+	}
+
+	&__map {
+		@include screen-sm-plus2 {
+			width: 45%;
+		}
+		@include screen-lg {
+			width: 40%;
+		}
+	}
+}
+
+.note {
+	padding: 19px 24px 21px;
+	border-radius: 16px;
+	background: url('../img/bg-note.svg') calc(100% + 25px) calc(100% + 30px) / 90px no-repeat,
+                linear-gradient(to right, $dark, $dark);
+	margin-bottom: 56px;
+	@include screen-sm-plus2 {
+		margin-bottom: 0;
+	}
+}
+
+.map-wrap {
+	overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    display: flex; 
+    justify-content: center;
+	// background-color: yellowgreen;
+}
+
+.map {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background-color: #f00;
+	
+	ymaps {
+		border-radius: 16px;
+		transition: none;
+	}
+	canvas {
+		transition: none;
+	}
+}

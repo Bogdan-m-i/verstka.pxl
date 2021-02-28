@@ -1,0 +1,518 @@
+@import './mixins/font-face';
+@import './fonts';
+@import './mixins/screen';
+@import './var';
+@import './modal';
+@import './btn';
+@import './form';
+@import './navbar';
+@import './main';
+@import './desc';
+@import './gallery';
+@import './address';
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mabry Pro';
+    font-weight: 300;
+    color: $white;
+    
+    transition: all 0.2s;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    color: $white;
+    background: $black;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    background: $black;
+    margin-top: 74px;
+    overflow: hidden;
+    @include screen-md {
+        margin-top: 105px;
+    }
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+.h1 {
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 900;
+
+    @include screen-sm {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    @include screen-lg {
+        font-size: 64px;
+        line-height: 80px;
+    }
+}
+
+.h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 900;
+
+    @include screen-lg {
+        font-size: 48px;
+        line-height: 56px;
+    }
+}
+
+.h3 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+
+    @include screen-lg {
+        font-size: 32px;
+        line-height: 130%;
+    }
+}
+
+.h4 {
+    font-size: 40px;
+    line-height: 48px;
+
+    @include screen-lg {
+        font-size: 64px;
+        line-height: 64px;
+    }
+}
+
+.p1 {
+    font-size: 16px;
+    line-height: 24px;
+
+    @include screen-lg {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.p2 {
+    font-size: 12px;
+    line-height: 16px;
+
+    @include screen-lg {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.container,
+.container-slim {
+    position: relative;
+    z-index: 101;
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    // padding-bottom: 32px;
+    margin-right: auto;
+    margin-left: auto;
+    @include screen-md {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+.container {
+    max-width: 1232px;
+    @include screen-lg {
+        max-width: 1488px;
+    }
+}
+
+.container-slim {
+    max-width: 1232px;
+    @include screen-lg {
+        max-width: 1232px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-bottom: -16px;
+    @include screen-md {
+        margin-right: -20px;
+        margin-left: -20px;
+        margin-bottom: -40px;
+    }
+}
+
+.col {
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 16px;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include screen-sm-plus2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    @include screen-md {
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 40px;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.section-main,
+.section-about,
+.section-mk,
+.section-gallery,
+.section-next-mk {
+    position: relative;
+    z-index: 100;
+
+    padding: 0 0 142px 0;
+    @include screen-md {
+        padding: 0 0 264px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 61px;
+        @include screen-md {
+            margin-bottom: 82px;
+        }
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+}
+.section-next-mk {
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.loading {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 34px;
+    animation: spinner 1s linear 0s infinite normal none running;
+    display: none;
+    z-index: 20000;
+
+    @keyframes spinner {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.visible-xs {
+    display: block;
+    @include screen-md {
+        display: none;
+    }
+}
+
+.hidden-xs {
+    display: none;
+    @include screen-md {
+        display: block;
+    }
+}
+
+.nowrap {
+    font-size: inherit;
+    font-weight: inherit;
+    @include screen-sm {
+        white-space: nowrap;
+    }
+}
+
+ymaps {
+    color: black;
+}
+
+//////BACKGROUND
+
+.ibg1, .ibg2, .ibg3 {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -10;
+}
+.ibg1 {
+    background-image: url('../img/bg-1.svg');
+}
+.ibg2 {
+    background-image: url('../img/bg-2.svg');
+}
+.ibg3 {
+    background-image: url('../img/bg-3.svg');
+}
+
+.section-next-mk {
+    .location__info,
+    .location__map {
+        position: relative;
+    }
+    .ibg1 {
+        bottom: -270px;
+        right: -400px;
+        width: 600px;
+        height: 600px;
+    }
+    .ibg2 {
+        bottom: -250px;
+        left: -250px;
+        width: 600px;
+        height: 600px;
+    }
+
+    @include screen-sm-plus2 {
+        .ibg1 {
+            top: calc(50% - 100px);
+            right: -450px;
+            width: 700px;
+            height: 700px;
+        }
+        .ibg2 {
+            bottom: calc(50% - 350px);
+            left: -330px;
+            width: 700px;
+            height: 700px;
+        }
+    }
+    @include screen-md {
+        .ibg2 {
+            bottom: calc(50% - 600px);
+            left: -330px;
+            width: 700px;
+            height: 900px;
+        }
+    }
+    @include screen-lg {
+        .ibg1 {
+            top: 300px;
+            left: 450px;
+            width: 500px;
+            height: 500px;
+        }
+    }
+}
+
+.section-gallery {
+    .ibg1 {
+        top: -100px;
+        left: -250px;
+        width: 600px;
+        height: 600px;
+    }
+    .ibg2 {
+        bottom: -250px;
+        right: -300px;
+        width: 600px;
+        height: 600px;
+    }
+
+    @include screen-sm-plus2 {
+        .ibg1 {
+            top: -150px;
+            left: -250px;
+            width: 750px;
+            height: 750px;
+        }
+        .ibg2 {
+            top: calc(50% - 350px);
+            right: -300px;
+            width: 750px;
+            height: 750px;
+        }
+    }
+
+    @include screen-lg {
+        .ibg1 {
+            top: -200px;
+            left: -300px;
+            width: 1000px;
+            height: 1000px;
+        }
+        .ibg2 {
+            top: calc(50% - 400px);
+            right: -380px;
+            width: 1000px;
+            height: 1000px;
+        }
+    }
+}
+
+.section-mk {
+    .ibg1 {
+        top: -100px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+    }
+    .ibg2 {
+        bottom: -250px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+    }
+    .ibg3 {
+        top: calc(50% - 300px);
+        left: -200px;
+        width: 600px;
+        height: 600px;
+    }
+
+    @include screen-sm-plus2 {
+        .ibg1 {
+            top: -100px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+        }
+        .ibg2 {
+            bottom: -250px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+        }
+        .ibg3 {
+            top: calc(50% - 350px);
+            left: -200px;
+            width: 700px;
+            height: 700px;
+        }
+    }
+
+    @include screen-lg {
+        .ibg1 {
+            top: -250px;
+            right: -420px;
+            width: 1250px;
+            height: 1250px;
+        }
+        .ibg2 {
+            bottom: -450px;
+            right: -400px;
+            width: 1250px;
+            height: 1250px;
+        }
+        .ibg3 {
+            top: calc(50% - 670px);
+            left: -330px;
+            width: 1250px;
+            height: 1250px;
+        }
+    }
+}
+
+
+// .section-mk {
+//     position: relative;
+//     z-index: 1;
+//     &:before {
+//         position: absolute;
+//         top: -100px;
+//         left: 0;
+//         right: 0;
+//         bottom: -100px;
+//         display: block;
+//         z-index: -1;
+//         content: '';
+//         background: url('../img/bg-1.svg') right -230px top 0px / 650px no-repeat,
+//                 url('../img/bg-3.svg') left -180px top 50% / 650px no-repeat,
+//                 url('../img/bg-3.svg') right -170px bottom -20px / 550px no-repeat;
+//         @include screen-sm-plus2 {
+//             background-position: right -220px top 0%, left -220px bottom 50%, right -220px bottom -20%;
+//             background-size: 800px, 800px, 800px;
+//         }
+//         @include screen-md {
+//             background-position: right -220px top 20%, left -220px bottom 50%, right -220px bottom 0%;
+//             background-size: 700px, 700px, 700px;
+//         }
+//         @include screen-lg {
+//             background-position: right -10vw top 20%, left -10vw bottom 50%, right -10vw bottom 0%;
+//             background-size: 900px, 900px, 900px;
+//         }
+//         @include screen-xl {
+//             background-position: right -30px top 20%, left -30px bottom 50%, right -30px bottom 0%;
+//             background-size: 900px, 900px, 900px;
+//         }
+//     }
+// }
+
+// .section-gallery {
+//     background: url('../img/bg-1.svg') left -250px top 0% / 500px no-repeat,
+//                 url('../img/bg-2.svg') right -250px bottom 0% / 500px no-repeat;
+//     @include screen-md {
+//         background-position: left -300px top 0%, right -300px center;
+//         background-size: 700px, 700px;
+//     }
+//     @include screen-lg {
+//         background-position: left -300px top 0%, right -300px center;
+//         background-size: 900px, 900px;
+//     }
+//     @include screen-xl {
+//         background-position: left -30px top 0%, right -30px center;
+//         background-size: 900px, 900px;
+//     }
+// }
+
+// .section-next-mk {
+//     background: url('../img/bg-1.svg') right -250px bottom 20% / 500px no-repeat,
+//                 url('../img/bg-2.svg') left -250px bottom -20% / 500px no-repeat;
+//     @include screen-md {
+//         background-position: right -250px bottom -200%, left -250px bottom -150px;
+//         background-size: 700px, 700px;
+//     }
+//     @include screen-lg {
+//         background-position: right -350px bottom -300%, left -350px bottom -150px;
+//         background-size: 900px, 900px;
+//     }
+//     @include screen-xl {
+//         background-position: right -300px bottom -300%, left -100px bottom -100px;
+//         background-size: 900px, 900px;
+//     }
+// }

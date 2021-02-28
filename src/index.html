@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=2e209ee8-1993-453a-8d24-5b2cc1542ace&lang=ru_RU" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="loading">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31 17C31 24.732 24.732 31 17 31C9.26801 31 3 24.732 3 17C3 9.26801 9.26801 3 17 3" stroke="#FF7777" stroke-width="6" stroke-linecap="round"/>
+        </svg>            
+    </div>
+
+    <nav class="navbar">
+        <div class="container navbar__container">
+            <div class="navbar__toggle">
+                <button>
+                    <svg width="32" height="24" viewBox="0 0 32 24" fill="#9E9DAC" xmlns="http://www.w3.org/2000/svg" class="svg-menu">
+                        <rect width="32" height="2" stroke-width="0"/>
+                        <rect y="11" width="32" height="2" stroke-width="0"/>
+                        <rect y="22" width="16" height="2" stroke-width="0"/>
+                    </svg>
+                    <svg width="28" height="28" viewBox="0 0 30 30" fill="#9E9DAC" xmlns="http://www.w3.org/2000/svg" class="svg-close">
+                        <path d="M1.00024 1L29 29" stroke="#9E9DAC" stroke-width="2"/>
+                        <path d="M28.9998 1L1.00004 29" stroke="#9E9DAC" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="navbar__logo">
+                <a href="#main">
+                    <svg width="55" height="55" viewBox="0 0 55 55" fill="#89B2FF" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.6583 38V17.0707H31.9876L27.5028 34.5915L23.018 17.0707H14.3473V38H19.1311V19.5822L23.9149 38H31.0907L35.8745 19.5822V38H40.6583Z" fill="#89B2FF"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 50C39.9264 50 50 39.9264 50 27.5C50 15.0736 39.9264 5 27.5 5C15.0736 5 5 15.0736 5 27.5C5 39.9264 15.0736 50 27.5 50ZM27.5 55C42.6878 55 55 42.6878 55 27.5C55 12.3122 42.6878 0 27.5 0C12.3122 0 0 12.3122 0 27.5C0 42.6878 12.3122 55 27.5 55Z" fill="#89B2FF"/>
+                    </svg>
+                </a>
+            </div>
+            <ul class="navbar__menu scroll-spy">
+                <li><a class="active" href="#about">О чем это</a></li>
+                <li><a href="#program">Программа</a></li>
+                <li><a href="#mk">Мастер-классы</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#next-mk">Ближайший мастер-класс</a></li>
+            </ul>
+            <div class="navbar__btn">
+                <button class="btn btn_red-outline open-modal">Записаться</button>
+            </div>
+        </div>
+    </nav>
+<div class="bgwrap">
+    <section class="section-main" id="main">
+        <div class="container-slim main-container">
+            <div class="main-row">
+                <div class="main-header">
+                    <h1 class="h1"><span class="nowrap">Мастер&#8209;классы</span><br>по&#8209;онлайн-шопингу</h1>
+                    <p class="p1">Далеко&#8209;далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+                    <button class="btn btn_red open-modal">Записаться</button>
+                </div>
+                <div class="main-img">
+                    <!-- <img src="./img//main.png" alt="" class="visible-xs"> -->
+                    <img id="ImgVector" src="./img/main/Vector.webp" alt="" class="NOhidden-xs">
+                    <img id="ImgVector2" src="./img/main/Vector2.webp" alt="" class="NOhidden-xs">
+                    <img id="ImgPage" src="./img/main/page.webp" alt="" class="NOhidden-xs">
+                    <img id="ImgMenu" src="./img/main/menu.webp" alt="" class="NOhidden-xs">
+                    <img id="ImgCart" src="./img/main/cart.webp" alt="" class="NOhidden-xs">
+                </div>
+            </div>
+            <div class="info-grid">
+                <ul class="info-row">
+                    <li class="p1">Ближайший мастер&#8209;класс</li>
+                    <li class="p1">офлайн</li>
+                </ul>
+                <ul class="info-row">
+                    <li class="p1">14 сентября</li>
+                    <li class="p1">11:00</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about" id="about">
+        <div class="container-slim">
+            <div class="section-header">
+                <h2 class="h2">О чем это</h2>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <div class="article">
+                        <div class="article__p">
+                            <p class="p1">
+                                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <div class="article__h">
+                            <h3 class="h3">Для кого</h3>
+                        </div>
+                        <div class="article__p">
+                            <p class="p1">
+                                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    
+                    <ul class="quest-list">
+                        <li class="p1">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты?</li>
+                        <li class="p1">Далеко-далеко за словесными горами в стране гласных и согласных живут?</li>
+                        <li class="p1">Далеко-далеко за словесными горами в стране гласных и согласных живут?</li>
+                        <li class="p1">Далеко-далеко за словесными?</li>
+                        <li class="p1"><span class="nowrap">Ответим на эти вопросы –</span> <span class="nowrap">и не только на них!</span></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <section class="section-mk" id="mk">
+        <div class="container-slim">
+            <div class="section-header">
+                <h2 class="h2">Мастер&#8209;классы</h2>
+            </div>
+            <div class="row">
+
+                <div class="col">
+                    <div class="cart">
+                        <div class="cart__body">
+
+                            <div class="article">
+                                <div class="article__h">
+                                    <h3 class="h3">Экономия на онлайн&#8209;шопинге</h3>
+                                </div>
+                                <div class="article__p">
+                                    <p class="p1">
+                                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cart__footer">
+                            <button class="btn btn_red-outline open-modal">Записаться</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cart">
+                        <div class="cart__body">
+                            
+                            <div class="article">
+                                <div class="article__h">
+                                    <h3 class="h3">Мастер-класс</h3>
+                                </div>
+                                <div class="article__p">
+                                    <p class="p1">
+                                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cart__footer">
+                            <button class="btn btn_red-outline open-modal">Записаться</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cart">
+                        <div class="cart__body">
+                            
+                            <div class="article">
+                                <div class="article__h">
+                                    <h3 class="h3">Лучшие площадки</h3>
+                                </div>
+                                <div class="article__p">
+                                    <p class="p1">
+                                        Далеко&#8209;далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана.  Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cart__footer">
+                            <button class="btn btn_red-outline open-modal">Записаться</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cart">
+                        <div class="cart__body">
+                            
+                            <div class="article">
+                                <div class="article__h">
+                                    <h3 class="h3">Мастер-класс</h3>
+                                </div>
+                                <div class="article__p">
+                                    <p class="p1">
+                                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="cart__footer">
+                            <button class="btn btn_red-outline open-modal">Записаться</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ibg1"></div>
+            <div class="ibg2"></div>
+            <div class="ibg3"></div>
+        </div>
+    </section>
+
+    <section class="section-gallery" id="gallery">
+        <div class="container-slim">
+            <div class="section-header">
+                <h2 class="h2">Галерея</h2>
+            </div>
+
+            <div class="gallery">
+                <div class="gallery__item"> <img src="./img/9ccc6c75477602327dc92b6dbc151a11.jpg" alt=""> </div>
+                <div class="gallery__item"> <img src="./img/4e733776ac593c8ce9021518dff79503.jpg" alt=""> </div>
+                <div class="gallery__item"> <img src="./img/cc8fa109f22c8b22a19743f2eabaf2fb.jpg" alt=""> </div>
+                <div class="gallery__item"> <img src="./img/a183fc39bc38415e30be0ffd7f0e4867.jpg" alt=""> </div>
+                <div class="gallery__item"> <img src="./img/18eb0c59bc057c71f3803d367951e3c0.jpg" alt=""> </div>
+            </div>
+
+            <div class="ibg1"></div>
+            <div class="ibg2"></div>
+        </div>
+    </section>
+
+    <section class="section-next-mk" id="next-mk">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="h2">Ближайший мастер&#8209;класс</h2>
+            </div>
+
+            <div class="location">
+                <div class="location__map">
+                    <div class="map-wrap">
+                        <div id="map" class="map"></div>
+                    </div>
+                    <div class="ibg2"></div>
+                </div>
+                <div class="location__info">
+
+                    <div class="location__table">
+
+                        <div class="location__cell-date cell-info">
+                            <div class="cell-info__label"><p class="p2">Дата</p></div>
+                            <div class="cell-info__body">
+                                <h4 class="h4 cell-info__date">14 <p class="p1">сентября</p></h4>
+                            </div>
+                        </div>
+
+                        <div class="location__cell-address cell-info">
+                            <div class="cell-info__label"><p class="p2">Место</p></div>
+                            <div class="cell-info__body">
+                                <p class="p1">Екатеринбург, ул. Карла Либкнехта, 22, БЦ Консул. Офис 315, пространство PXL PRO</p>
+                            </div>
+                        </div>
+
+                        <div class="location__cell-time cell-info">
+                            <div class="cell-info__label"><p class="p2">Старт</p></div>
+                            <div class="cell-info__body">
+                                <h4 class="h4 cell-info__clock">11<span>&ensp;</span>00</h4>
+                            </div>
+                        </div>
+
+                        <div class="location__cell-cost cell-info">
+                            <div class="cell-info__label"><p class="p2">Участие</p></div>
+                            <div class="cell-info__body">
+                                <p class="p1">Бесплатно, по предварительной регистрации</p>
+                            </div>
+                            <div class="cell-info__footer">
+                                <p class="p1">Количество мест ограничено!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
+                    <div class="note">
+                        <p class="p1">
+                            С парковками, признаемся, у нас обычно сложно, поэтому лучше приехать заранее, чтобы найти парковочное место
+                        </p>
+                    </div>
+
+                    <div class="ibg1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="window">
+        <div class="window__bg">
+            <div class="modal">
+                <div class="modal__close">
+                    <a href="#" class="btn-close">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.21338 0.828613L29.2132 28.8286" stroke-width="2"/>
+                            <path d="M29.2134 0.828613L1.21357 28.8286" stroke-width="2"/>
+                        </svg>
+                    </a>                  
+                </div>
+                <div class="modal__header">
+                    
+                </div>
+                <div class="modal__body">
+                    
+                    
+        
+                </div>
+                <div class="modal__footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./js/main.js"></script>
+</html>
